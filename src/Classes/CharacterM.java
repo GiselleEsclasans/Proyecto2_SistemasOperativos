@@ -8,82 +8,87 @@ package Classes;
  *
  * @author gigie
  */
-public class Character {
-    private int cId;
-    private String name;
-    private String hability;
-    private int lifePoints;
+public class CharacterM {
+    private String id;
+    
+   
+    private String skill;
+    private int life;
     private int strength;
-    private String agility;
+    private int agility;
+    
     private String status;
     
      private int priority;
+     private String quality;
     
-    public Character(int cId, String name, String hability, int life, int strength, String agility){
-        this.cId = cId;
-        this.name = name;
-        this.hability = hability; 
-        this.lifePoints = life;
+    public CharacterM(String id, int priority, String quality,  String skill, int life, int strength, int agility){
+        this.id = id;
+        this.priority = priority;
+        this.quality = quality;
+        this.skill = skill; 
+        this.life = life;
         this.strength = strength;
         this.agility = agility;
-        
+    }
     
+    
+    @Override
+    public String toString() {
+        return  "Priority: " + priority + ", Name: " + id + ", Quality: " + quality + ", Skill: " + skill + 
+           ", Life: " + life + ", Strength: " + strength + ", Agility: " + agility;
+    }
+    
+    
+    
+    
+    
+
+    /**
+     * @return the id
+     */
+    public String getId() {
+        return id;
     }
 
     /**
-     * @return the cId
+     * @param id the id to set
      */
-    public int getcId() {
-        return cId;
-    }
-
-    /**
-     * @param cId the cId to set
-     */
-    public void setcId(int cId) {
-        this.cId = cId;
+    public void setId(String id) {
+        this.id = id;
     }
 
     /**
      * @return the name
      */
-    public String getName() {
-        return name;
+   
+
+    /**
+     * @return the skill
+     */
+    public String getSkill() {
+        return skill;
     }
 
     /**
-     * @param name the name to set
+     * @param skill the skill to set
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setSkill(String skill) {
+        this.skill = skill;
     }
 
     /**
-     * @return the hability
+     * @return the life
      */
-    public String getHability() {
-        return hability;
+    public int getLife() {
+        return life;
     }
 
     /**
-     * @param hability the hability to set
+     * @param life the life to set
      */
-    public void setHability(String hability) {
-        this.hability = hability;
-    }
-
-    /**
-     * @return the lifePoints
-     */
-    public int getLifePoints() {
-        return lifePoints;
-    }
-
-    /**
-     * @param lifePoints the lifePoints to set
-     */
-    public void setLifePoints(int lifePoints) {
-        this.lifePoints = lifePoints;
+    public void setLife(int life) {
+        this.life = life;
     }
 
     /**
@@ -103,14 +108,14 @@ public class Character {
     /**
      * @return the agility
      */
-    public String getAgility() {
+    public int getAgility() {
         return agility;
     }
 
     /**
      * @param agility the agility to set
      */
-    public void setAgility(String agility) {
+    public void setAgility(int agility) {
         this.agility = agility;
     }
 

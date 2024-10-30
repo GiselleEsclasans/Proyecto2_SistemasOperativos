@@ -1,0 +1,40 @@
+ID: Luke Skywalker, Prioridad : 3, Tipo: Deficiente, Habilidad: Normal, Vida: 67, Fuerza: 103, Agilidad: 188
+ID: Darth Vader, Prioridad : 1, Tipo: Excepcional, Habilidad: Calidad, Vida: 184, Fuerza: 12, Agilidad: 135
+ID: Yoda, Prioridad : 1, Tipo: Excepcional, Habilidad: Calidad, Vida: 200, Fuerza: 125, Agilidad: 126
+ID: Princess Leia, Prioridad : 1, Tipo: Excepcional, Habilidad: Normal, Vida: 162, Fuerza: 131, Agilidad: 189
+ID: Han Solo, Prioridad : 1, Tipo: Excepcional, Habilidad: Calidad, Vida: 129, Fuerza: 167, Agilidad: 16
+ID: Obi-Wan Kenobi, Prioridad : 2, Tipo: Promedio, Habilidad: Normal, Vida: 23, Fuerza: 122, Agilidad: 200
+ID: Chewbacca, Prioridad : 2, Tipo: Promedio, Habilidad: Calidad, Vida: 35, Fuerza: 140, Agilidad: 61
+ID: R2-D2, Prioridad : 2, Tipo: Promedio, Habilidad: Normal, Vida: 133, Fuerza: 5, Agilidad: 126
+ID: C-3PO, Prioridad : 3, Tipo: Deficiente, Habilidad: Normal, Vida: 51, Fuerza: 39, Agilidad: 11
+ID: Rey, Prioridad : 3, Tipo: Deficiente, Habilidad: Calidad, Vida: 96, Fuerza: 44, Agilidad: 72
+ID: Kylo Ren, Prioridad : 2, Tipo: Promedio, Habilidad: Normal, Vida: 180, Fuerza: 164, Agilidad: 56
+ID: Padmé Amidala, Prioridad : 2, Tipo: Promedio, Habilidad: Calidad, Vida: 44, Fuerza: 51, Agilidad: 125
+ID: Ahsoka Tano, Prioridad : 2, Tipo: Promedio, Habilidad: Normal, Vida: 198, Fuerza: 169, Agilidad: 93
+ID: Boba Fett, Prioridad : 2, Tipo: Promedio, Habilidad: Normal, Vida: 35, Fuerza: 144, Agilidad: 132
+ID: Mace Windu, Prioridad : 3, Tipo: Deficiente, Habilidad: Normal, Vida: 84, Fuerza: 97, Agilidad: 97
+ID: Qui-Gon Jinn, Prioridad : 3, Tipo: Deficiente, Habilidad: Normal, Vida: 63, Fuerza: 123, Agilidad: 88
+ID: Anakin Skywalker, Prioridad : 2, Tipo: Promedio, Habilidad: Calidad, Vida: 74, Fuerza: 50, Agilidad: 142
+ID: Jabba the Hutt, Prioridad : 3, Tipo: Deficiente, Habilidad: Normal, Vida: 92, Fuerza: 48, Agilidad: 126
+ID: Lando Calrissian, Prioridad : 1, Tipo: Excepcional, Habilidad: Calidad, Vida: 104, Fuerza: 156, Agilidad: 181
+ID: Palpatine, Prioridad : 3, Tipo: Deficiente, Habilidad: Calidad, Vida: 43, Fuerza: 97, Agilidad: 111
+ID: James T. Kirk, Prioridad : 1, Tipo: Excepcional, Habilidad: Calidad, Vida: 154, Fuerza: 161, Agilidad: 59
+ID: Spock, Prioridad : 3, Tipo: Deficiente, Habilidad: Normal, Vida: 30, Fuerza: 115, Agilidad: 155
+ID: Leonard McCoy, Prioridad : 2, Tipo: Promedio, Habilidad: Normal, Vida: 126, Fuerza: 153, Agilidad: 79
+ID: Jean-Luc Picard, Prioridad : 3, Tipo: Deficiente, Habilidad: Calidad, Vida: 45, Fuerza: 112, Agilidad: 31
+ID: Data, Prioridad : 3, Tipo: Deficiente, Habilidad: Normal, Vida: 29, Fuerza: 190, Agilidad: 93
+ID: Worf, Prioridad : 2, Tipo: Promedio, Habilidad: Calidad, Vida: 52, Fuerza: 180, Agilidad: 62
+ID: Beverly Crusher, Prioridad : 2, Tipo: Promedio, Habilidad: Calidad, Vida: 21, Fuerza: 160, Agilidad: 15
+ID: Deanna Troi, Prioridad : 2, Tipo: Promedio, Habilidad: Normal, Vida: 140, Fuerza: 20, Agilidad: 196
+ID: Geordi La Forge, Prioridad : 2, Tipo: Promedio, Habilidad: Calidad, Vida: 147, Fuerza: 65, Agilidad: 1
+ID: Benjamin Sisko, Prioridad : 1, Tipo: Excepcional, Habilidad: Calidad, Vida: 133, Fuerza: 67, Agilidad: 143
+ID: Jadzia Dax, Prioridad : 2, Tipo: Promedio, Habilidad: Calidad, Vida: 180, Fuerza: 37, Agilidad: 43
+ID: Kira Nerys, Prioridad : 2, Tipo: Promedio, Habilidad: Normal, Vida: 195, Fuerza: 108, Agilidad: 140
+ID: Q, Prioridad : 1, Tipo: Excepcional, Habilidad: Calidad, Vida: 122, Fuerza: 133, Agilidad: 194
+ID: Scotty, Prioridad : 3, Tipo: Deficiente, Habilidad: Normal, Vida: 124, Fuerza: 49, Agilidad: 11
+ID: Chakotay, Prioridad : 3, Tipo: Deficiente, Habilidad: Normal, Vida: 42, Fuerza: 30, Agilidad: 181
+ID: Janeway, Prioridad : 2, Tipo: Promedio, Habilidad: Calidad, Vida: 104, Fuerza: 6, Agilidad: 196
+ID: Seven of Nine, Prioridad : 2, Tipo: Promedio, Habilidad: Calidad, Vida: 71, Fuerza: 73, Agilidad: 180
+ID: T'Pol, Prioridad : 3, Tipo: Deficiente, Habilidad: Normal, Vida: 193, Fuerza: 88, Agilidad: 57
+ID: Phlox, Prioridad : 3, Tipo: Deficiente, Habilidad: Normal, Vida: 179, Fuerza: 113, Agilidad: 99
+ID: Miles O'Brien, Prioridad : 1, Tipo: Excepcional, Habilidad: Calidad, Vida: 163, Fuerza: 179, Agilidad: 41

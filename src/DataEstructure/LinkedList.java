@@ -4,6 +4,8 @@
  */
 package DataEstructure;
 
+import Classes.CharacterM;
+
 /**
  *
  * @author gigie
@@ -17,7 +19,7 @@ public class LinkedList {
         this.size = 0;
     }
     
-    public void insert(Character c) {
+    public void insert(CharacterM c) {
     Node newNode = new Node(c);
     
     if (getpFirst() == null) { 
@@ -31,6 +33,25 @@ public class LinkedList {
     }
         setSize(getSize() + 1);
     }
+    
+    
+    public CharacterM get(int i) {
+    // Verifica si el índice está dentro de los límites de la lista
+    if (i < 0 || i >= size) {
+        throw new IndexOutOfBoundsException("Índice fuera de los límites: " + i);
+    }
+
+    Node current = pFirst; // Comienza desde el primer nodo
+    for (int index = 0; index < i; index++) {
+        current = current.getpNextN(); // Avanza al siguiente nodo
+    }
+
+        return current.getC(); // Supongamos que tienes un método getCharacter() en Node
+    }
+    
+    
+    
+    
 
     /**
      * @return the pFirst
