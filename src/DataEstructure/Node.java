@@ -4,6 +4,8 @@
  */
 package DataEstructure;
 
+import Classes.CharacterM;
+
 /**
  *
  * @author gigie
@@ -12,10 +14,10 @@ package DataEstructure;
 
 public class Node {
     private Node pNextN;
-    private Character c;
+    private CharacterM c;
     private int id;
 
-    public Node(Character c) {
+    public Node(CharacterM c) {
         this.pNextN = null;
         this.c = c;
     }
@@ -44,14 +46,14 @@ public class Node {
     /**
      * @return the c
      */
-    public Character getC() {
+    public CharacterM getC() {
         return c;
     }
 
     /**
      * @param c the c to set
      */
-    public void setC(Character c) {
+    public void setC(CharacterM c) {
         this.c = c;
     }
 

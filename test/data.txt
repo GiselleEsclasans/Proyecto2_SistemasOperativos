@@ -1,0 +1,43 @@
+<STAR WARS>
+Luke Skywalker,1,Excepcional,Medicina,150,127,118
+Darth Vader,1,Excepcional,Fuerza,157,179,164
+Yoda,1,Excepcional,Diplomacia,175,145,118
+Princess Leia,1,Excepcional,Fuerza,181,130,110
+Han Solo,1,Excepcional,Fuerza,155,160,118
+Obi-Wan Kenobi,3,Deficiente,Diplomacia,117,97,94
+Anakin Skywalker,2,Promedio,Medicina,82,114,139
+Mace Windu,1,Excepcional,Diplomacia,166,127,129
+Qui-Gon Jinn,1,Excepcional,Medicina,143,165,89
+Padmé Amidala,1,Excepcional,Liderazgo,126,150,163
+C-3PO,3,Deficiente,Piloto,152,80,89
+R2-D2,1,Excepcional,Logica,175,165,180
+Chewbacca,2,Promedio,Logica,130,142,88
+Lando Calrissian,2,Promedio,Piloto,125,121,97
+Boba Fett,1,Excepcional,Fuerza,143,152,90
+Jabba the Hutt,3,Deficiente,Analisis,113,109,90
+Emperor Palpatine,2,Promedio,Aguante,131,197,114
+Darth Maul,2,Promedio,Logica,88,196,181
+Grand Moff Tarkin,3,Deficiente,Aguante,121,116,104
+Mon Mothma,1,Excepcional,Fuerza,178,122,132
+
+<STAR TRECK>
+James T. Kirk,3,Deficiente,Logica,99,171,110
+Spock,2,Promedio,Analisis,144,111,160
+Leonard McCoy,3,Deficiente,Liderazgo,96,94,89
+Jean-Luc Picard,1,Excepcional,Liderazgo,125,82,154
+Data,1,Excepcional,Aguante,185,161,194
+William Riker,3,Deficiente,Piloto,197,115,87
+Deanna Troi,1,Excepcional,Diplomacia,120,83,175
+Geordi La Forge,1,Excepcional,Analisis,141,170,148
+Worf,2,Promedio,Aguante,140,105,154
+Beverly Crusher,1,Excepcional,Logica,144,194,166
+Montgomery Scott,1,Excepcional,Liderazgo,90,141,146
+Hikaru Sulu,2,Promedio,Liderazgo,147,96,101
+Nyota Uhura,1,Excepcional,Liderazgo,198,178,156
+Pavel Chekov,3,Deficiente,Analisis,83,102,103
+Leonard Nimoy,1,Excepcional,Liderazgo,193,195,175
+Patrick Stewart,3,Deficiente,Diplomacia,96,83,113
+Jonathan Frakes,2,Promedio,Analisis,96,145,179
+Marina Sirtis,1,Excepcional,Diplomacia,113,151,166
+Brent Spiner,2,Promedio,Liderazgo,111,109,140
+Gates McFadden,2,Promedio,Logica,180,168,99

@@ -4,6 +4,8 @@
  */
 package DataEstructure;
 
+import Classes.CharacterM;
+
 /**
  *
  * @author gigie
@@ -28,7 +30,7 @@ public class Queue {
         return front == null;
     }
     
-    public void enqueue(Character c) {
+    public void enqueue(CharacterM c) {
         Node newNode = new Node(c);
         if (isEmpty()) { // If the queue is empty
             front = newNode;
