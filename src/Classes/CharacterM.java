@@ -11,7 +11,6 @@ package Classes;
 public class CharacterM {
     private String id;
     
-   
     private String skill;
     private int life;
     private int strength;
