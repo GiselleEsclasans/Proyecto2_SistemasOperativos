@@ -53,25 +53,25 @@ public class FileMovies {
                         if (currentSeries.equals("STAR WARS")) {
                             switch (priority) {
                                 case 1:
-                                    firstStarWars.insert(character);
+                                    getFirstStarWars().insert(character);
                                     break;
                                 case 2:
-                                    secondStarWars.insert(character);
+                                    getSecondStarWars().insert(character);
                                     break;
                                 case 3:
-                                    thirdStarWars.insert(character);
+                                    getThirdStarWars().insert(character);
                                     break;
                             }
                         } else if (currentSeries.equals("STAR TREK")) {
                             switch (priority) {
                                 case 1:
-                                    firstStarTrek.insert(character);
+                                    getFirstStarTrek().insert(character);
                                     break;
                                 case 2:
-                                    secondStarTrek.insert(character);
+                                    getSecondStarTrek().insert(character);
                                     break;
                                 case 3:
-                                    thirdStarTrek.insert(character);
+                                    getThirdStarTrek().insert(character);
                                     break;
                             }
                         }
@@ -86,14 +86,14 @@ public class FileMovies {
     
     public void printCharacters() {
     System.out.println("Star Wars Characters:");
-    printCharacterList(firstStarWars);
-    printCharacterList(secondStarWars);
-    printCharacterList(thirdStarWars);
+    printCharacterList(getFirstStarWars());
+    printCharacterList(getSecondStarWars());
+    printCharacterList(getThirdStarWars());
     
     System.out.println("Star Trek Characters:");
-    printCharacterList(firstStarTrek);
-    printCharacterList(secondStarTrek);
-    printCharacterList(thirdStarTrek);
+    printCharacterList(getFirstStarTrek());
+    printCharacterList(getSecondStarTrek());
+    printCharacterList(getThirdStarTrek());
 }
 
     private void printCharacterList(LinkedList list) {
@@ -221,5 +221,89 @@ public class FileMovies {
     }
     
     */
+
+    /**
+     * @return the firstStarWars
+     */
+    public LinkedList getFirstStarWars() {
+        return firstStarWars;
+    }
+
+    /**
+     * @param firstStarWars the firstStarWars to set
+     */
+    public void setFirstStarWars(LinkedList firstStarWars) {
+        this.firstStarWars = firstStarWars;
+    }
+
+    /**
+     * @return the secondStarWars
+     */
+    public LinkedList getSecondStarWars() {
+        return secondStarWars;
+    }
+
+    /**
+     * @param secondStarWars the secondStarWars to set
+     */
+    public void setSecondStarWars(LinkedList secondStarWars) {
+        this.secondStarWars = secondStarWars;
+    }
+
+    /**
+     * @return the thirdStarWars
+     */
+    public LinkedList getThirdStarWars() {
+        return thirdStarWars;
+    }
+
+    /**
+     * @param thirdStarWars the thirdStarWars to set
+     */
+    public void setThirdStarWars(LinkedList thirdStarWars) {
+        this.thirdStarWars = thirdStarWars;
+    }
+
+    /**
+     * @return the firstStarTrek
+     */
+    public LinkedList getFirstStarTrek() {
+        return firstStarTrek;
+    }
+
+    /**
+     * @param firstStarTrek the firstStarTrek to set
+     */
+    public void setFirstStarTrek(LinkedList firstStarTrek) {
+        this.firstStarTrek = firstStarTrek;
+    }
+
+    /**
+     * @return the secondStarTrek
+     */
+    public LinkedList getSecondStarTrek() {
+        return secondStarTrek;
+    }
+
+    /**
+     * @param secondStarTrek the secondStarTrek to set
+     */
+    public void setSecondStarTrek(LinkedList secondStarTrek) {
+        this.secondStarTrek = secondStarTrek;
+    }
+
+    /**
+     * @return the thirdStarTrek
+     */
+    public LinkedList getThirdStarTrek() {
+        return thirdStarTrek;
+    }
+
+    /**
+     * @param thirdStarTrek the thirdStarTrek to set
+     */
+    public void setThirdStarTrek(LinkedList thirdStarTrek) {
+        this.thirdStarTrek = thirdStarTrek;
+    }
     
 }

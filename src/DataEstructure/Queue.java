@@ -42,14 +42,19 @@ public class Queue {
         size++;
     }
     
-    public Character dequeue() {
-        Character c = null;
+    public CharacterM dequeue() {
+        CharacterM c = null;
         if (!isEmpty()) {
-           // c = front.();                 OJO
-            this.front = next(front);
-            size--;
+        // Asignar el elemento frontal a c
+        c = this.front.getC(); // Suponiendo que 'front' es un nodo que tiene un método 'getData()'
+        
+        // Mover el puntero 'front' al siguiente nodo
+        this.front = this.front.getpNextN(); // Suponiendo que 'front' tiene un método 'getNext()'
+        
+        // Decrementar el tamaño de la cola
+        size--;
         }
-        return c;
+        return c; // Retornar el personaje desencolado
     }
     
     
