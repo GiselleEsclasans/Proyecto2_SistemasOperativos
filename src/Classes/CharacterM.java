@@ -10,6 +10,7 @@ package Classes;
  */
 public class CharacterM {
     private String id;
+    private String movie;
     
     private String skill;
     private int life;
@@ -17,11 +18,12 @@ public class CharacterM {
     private int agility;
     
     private String status;
-    
+     private int counter = 0;
+     
      private int priority;
      private String quality;
     
-    public CharacterM(String id, int priority, String quality,  String skill, int life, int strength, int agility){
+    public CharacterM(String id, int priority, String quality,  String skill, int life, int strength, int agility, String movie){
         this.id = id;
         this.priority = priority;
         this.quality = quality;
@@ -29,13 +31,24 @@ public class CharacterM {
         this.life = life;
         this.strength = strength;
         this.agility = agility;
+        this.movie = movie;
     }
     
     
     @Override
     public String toString() {
-        return  "Priority: " + priority + ", Name: " + id + ", Quality: " + quality + ", Skill: " + skill + 
-           ", Life: " + life + ", Strength: " + strength + ", Agility: " + agility;
+        return  "Priority: " + getPriority() + ", Name: " + getId() + ", Quality: " + getQuality() + ", Skill: " + getSkill() + 
+           ", Life: " + getLife() + ", Strength: " + getStrength() + ", Agility: " + getAgility();
+    }
+    
+    public String toString2() {
+        return  "" + getId();
+    }
+    
+    
+    
+    public void addCount(){
+        this.setCounter(this.getCounter() + 1);
     }
     
     
@@ -144,6 +157,48 @@ public class CharacterM {
      */
     public void setPriority(int priority) {
         this.priority = priority;
+    }
+
+    /**
+     * @return the counter
+     */
+    public int getCounter() {
+        return counter;
+    }
+
+    /**
+     * @param counter the counter to set
+     */
+    public void setCounter(int counter) {
+        this.counter = counter;
+    }
+
+    /**
+     * @return the quality
+     */
+    public String getQuality() {
+        return quality;
+    }
+
+    /**
+     * @param quality the quality to set
+     */
+    public void setQuality(String quality) {
+        this.quality = quality;
+    }
+
+    /**
+     * @return the movie
+     */
+    public String getMovie() {
+        return movie;
+    }
+
+    /**
+     * @param movie the movie to set
+     */
+    public void setMovie(String movie) {
+        this.movie = movie;
     }
     
     

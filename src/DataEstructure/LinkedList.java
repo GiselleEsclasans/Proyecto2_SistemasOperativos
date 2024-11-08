@@ -46,7 +46,7 @@ public class LinkedList {
         current = current.getpNextN(); // Avanza al siguiente nodo
     }
 
-        return current.getC(); // Supongamos que tienes un método getCharacter() en Node
+        return current.getC(); 
     }
     
     
