@@ -32,10 +32,10 @@ public class Queue {
     
     public void enqueue(CharacterM c) {
         Node newNode = new Node(c);
-        if (isEmpty()) { // If the queue is empty
+        if (isEmpty()) { 
             front = newNode;
         } else {
-            last.setpNextN(newNode); // Link the new node at the end
+            last.setpNextN(newNode); 
            
         }
         last = newNode;
@@ -45,16 +45,16 @@ public class Queue {
     public CharacterM dequeue() {
         CharacterM c = null;
         if (!isEmpty()) {
-        // Asignar el elemento frontal a c
-        c = this.front.getC(); // Suponiendo que 'front' es un nodo que tiene un método 'getData()'
         
-        // Mover el puntero 'front' al siguiente nodo
-        this.front = this.front.getpNextN(); // Suponiendo que 'front' tiene un método 'getNext()'
+        c = this.front.getC(); 
         
-        // Decrementar el tamaño de la cola
+     
+        this.front = this.front.getpNextN();
+        
+      
         size--;
         }
-        return c; // Retornar el personaje desencolado
+        return c; 
     }
     
     

@@ -4,7 +4,9 @@
  */
 package Data;
 
+import Classes.Admin;
 import Classes.CharacterM;
+import Classes.IA;
 import DataEstructure.LinkedList;
 import java.io.BufferedReader;  // Para leer el archivo línea por línea
 import java.io.File;            // Para trabajar con archivos
@@ -24,6 +26,9 @@ public class FileMovies {
     private LinkedList secondStarTrek = new LinkedList();
     private LinkedList thirdStarTrek = new LinkedList();
     
+    private static Admin admin;
+    private static IA ia;
+    
     
     public void read(File file) {
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
@@ -34,11 +39,11 @@ public class FileMovies {
                 line = line.trim();
                 if (line.equals("<STAR WARS>")) {
                     currentSeries = "STAR WARS";
-                } else if (line.equals("<STAR TRECK>")) {
+                } else if (line.equals("<STAR TREK>")) {
                     currentSeries = "STAR TREK";
                 } else if (!line.isEmpty()) {
                     String[] parts = line.split(",");
-                    if (parts.length == 7) {
+                    if (parts.length == 8) {
                         String id = parts[0];
                         int priority = Integer.parseInt(parts[1]);
                         String quality = parts[2];
@@ -46,8 +51,9 @@ public class FileMovies {
                         int life = Integer.parseInt(parts[4]);
                         int strength = Integer.parseInt(parts[5]);
                         int agility = Integer.parseInt(parts[6]);
+                        String movie = parts[7];
 
-                        CharacterM character = new CharacterM(id, priority, quality, skill, life, strength, agility);
+                        CharacterM character = new CharacterM(id, priority, quality, skill, life, strength, agility, movie);
 
                         // Insertar en la lista correspondiente
                         if (currentSeries.equals("STAR WARS")) {
@@ -109,10 +115,10 @@ public class FileMovies {
     
     
     
-     /*
+     /*-
         Insertar en el .txt ----------------------------------------------------------------
-        
-       FileWriter fichero = new FileWriter("test//data.txt", false);
+    
+   FileWriter fichero = new FileWriter("test//data.txt", false);
 
         // Personajes de Star Wars
         fichero.write("<STAR WARS>");
@@ -219,6 +225,8 @@ public class FileMovies {
     } else {
         return random.nextInt(40) + 80; // Genera un número entre 80 y 119
     }
+    
+    
     
     */
 
