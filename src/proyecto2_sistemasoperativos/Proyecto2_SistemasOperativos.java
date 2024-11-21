@@ -19,8 +19,7 @@ public class Proyecto2_SistemasOperativos {
      */
     public static void main(String[] args) throws IOException {
          App app = new App();
-         
-         
+        
          app.start();
        
     }

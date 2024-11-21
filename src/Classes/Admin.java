@@ -11,6 +11,7 @@ package Classes;
 import java.util.concurrent.Semaphore;
 import DataEstructure.LinkedList;
 import DataEstructure.Queue;
+import Interfaz.ControlInterfaz;
 import java.util.logging.Logger;
 import java.util.logging.Level;
 
@@ -29,6 +30,12 @@ public class Admin extends Thread {
     }
     
     public void startSimulation() {
+        
+        
+        ControlInterfaz.getHome().setVisible(true);
+        
+        
+        
          try {
             mutex.acquire();
         } catch (InterruptedException ex) {
@@ -44,11 +51,10 @@ public class Admin extends Thread {
 
     @Override
     public void run() {
-        int i = 0;
+       
         while (true) {
             try {
-                System.out.println(i + "-------------------------------------");
-                i++;
+                
                 this.starTrek.printQueues();
                 this.starWars.printQueues();
                 
@@ -68,6 +74,8 @@ public class Admin extends Thread {
                 this.ia.setStarWarsC(sWCharacter);
                 this.ia.setStarTrekC(sTCharacter);
                 
+                //Atualizar las colas en la interfaz
+                
                 mutex.release();
                 Thread.sleep(100);
                 mutex.acquire();
@@ -78,6 +86,8 @@ public class Admin extends Thread {
                 
 
                 cycle++; 
+                
+                //Atualizar las colas en la interfaz
                 
                 
                

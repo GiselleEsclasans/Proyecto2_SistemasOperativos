@@ -4,6 +4,7 @@
  */
 package Classes;
 
+import Interfaz.ControlInterfaz;
 import java.util.Random;
 import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
@@ -17,11 +18,15 @@ public class IA extends Thread {
     private final Semaphore mutex;
 
     private long time = 10; 
+    private int winnersStarWars = 0;
+    private int winnersStarTrek = 0;
+    private int round;
 
     public IA() {
         
         this.admin = App.getApp().getAdmin();
         this.mutex = App.getApp().getMutex();
+        this.round = 0;
     }
     
 
@@ -30,15 +35,22 @@ public class IA extends Thread {
         while (true) {
             try {
                 this.mutex.acquire();
+                this.round ++;
+                ControlInterfaz.getHome().getbattleStatus().setText("");
+                ControlInterfaz.getHome().getround().setText(String.valueOf(round));
+
+                ControlInterfaz.getHome().getiaState().setText("Procesando combate");
+                //Actualizar personaje en pelea
+                updateCharactersUI(this.getStarWarsC(), this.getStarTrekC());
+                
+                
+                 Thread.sleep((long) (this.getTime() * 1000 * 0.7));
+                
+                processBattle(this.getStarWarsC(), this.getStarTrekC());
+                
+                ControlInterfaz.getHome().getiaState().setText("Se finalizó la desición");
+                
             
-                //Thread.sleep((long) (this.getTime() * 1000 * 0.7));
-                // Procesar la batalla
-                
-                
-                
-                String result = processBattle(this.getStarWarsC(), this.getStarTrekC());
-                
-                System.out.println(result);
                 
                 
                 
@@ -53,31 +65,84 @@ public class IA extends Thread {
         }
     }
 
-    private String processBattle(CharacterM starWarsC, CharacterM starTrekC) throws InterruptedException {
+    private void processBattle(CharacterM starWarsC, CharacterM starTrekC) throws InterruptedException {
       
 
         Random random = new Random();
         int outcome = random.nextInt(100); 
 
         if (outcome < 40) { 
-            return declareWinner(starWarsC, starTrekC);
+            declareWinner(starWarsC, starTrekC);
+            Thread.sleep((long) ((getTime() * 1000 * 0.3) * 0.6));
         } else if (outcome < 67) { 
-            return declareDraw(starWarsC, starTrekC);
+            Thread.sleep((long) ((getTime() * 1000 * 0.3) * 0.6));
+            declareDraw(starWarsC, starTrekC);
+            
         } else { 
-            return declareNoFight(starWarsC, starTrekC);
+            Thread.sleep((long) ((getTime() * 1000 * 0.3) * 0.6));
+            declareNoFight(starWarsC, starTrekC);
+            
         }
     }
 
-    private String declareWinner(CharacterM winner, CharacterM loser) {
-     
-        admin.addWinner(winner);
-        //return "Winner: " + winner.toString() + ", Loser: " + loser.toString();
-        return "gano";
+    private void declareWinner(CharacterM cSW, CharacterM cST) {
+        
+        double lifeSW = starWarsC.getLife();
+        double lifeST = starTrekC.getLife();
+        
+        while (starWarsC.getLife() > 0 && starTrekC.getLife() > 0) {
+            int damageToST = (starWarsC.getStrength() + starWarsC.getAgility())/10;
+            lifeST = lifeST - damageToST;
+            if(lifeST >= 0){
+            ControlInterfaz.getHome().getcSTL().setText(String.valueOf(lifeST));
+            } else {
+                ControlInterfaz.getHome().getcSTL().setText(String.valueOf(0));
+            }
+            
+            ControlInterfaz.getHome().getBattleS().setText("Star Wars inflige " + damageToST);
+                // Esto dará 1000 milisegundos
+
+            // Verificar si Star Trek ha sido derrotado
+            if (lifeST <= 0) {
+                admin.addWinner(cSW);
+                winnersStarWars++;
+        
+                ControlInterfaz.getHome().getwinStarWars().setText(String.valueOf(winnersStarWars));
+                ControlInterfaz.getHome().getbattleStatus().setText("Ha ganado StarWars");
+                return;
+            }
+
+            // Star Trek ataca
+            int damageToSW = (starTrekC.getStrength() + starTrekC.getAgility())/10;
+            lifeSW = lifeSW - damageToSW;
+            
+            if(lifeSW >= 0){
+            ControlInterfaz.getHome().getcSWL().setText(String.valueOf(lifeSW));}
+             else {
+                ControlInterfaz.getHome().getcSWL().setText(String.valueOf(0));
+            }
+            ControlInterfaz.getHome().getBattleS().setText("Star Trek inflige " + damageToSW);
+           
+
+            // Verificar si Star Wars ha sido derrotado
+            if (lifeSW <= 0) {
+                admin.addWinner(cST);
+                winnersStarTrek++;
+        
+                ControlInterfaz.getHome().getwinStarTrek().setText(String.valueOf(winnersStarTrek));
+                ControlInterfaz.getHome().getbattleStatus().setText("Ha ganado StarTrek");
+                return;
+            }
+
+            
+        }
+        ControlInterfaz.getHome().getBattleS().setText("");
     }
 
     private String declareDraw(CharacterM char1, CharacterM char2) {
         admin.reinsertToQueue1(char1);
         admin.reinsertToQueue1(char2);
+        ControlInterfaz.getHome().getbattleStatus().setText("Ha ocurrido un empate");
         //return "Draw between " + char1.toString() + " and " + char2.toString();
         return "empate";
     }
@@ -85,8 +150,39 @@ public class IA extends Thread {
     private String declareNoFight(CharacterM char1, CharacterM char2) {
         admin.sendToReinforcement(char1);
         admin.sendToReinforcement(char2);
+        ControlInterfaz.getHome().getbattleStatus().setText("No se ha podido realizar el combate");
         //return "No fight possible for " + char1.toString() + " and " + char2.toString();
         return "no hubo pelea";
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    private void updateCharactersUI(CharacterM charSW, CharacterM charST){
+    
+        ControlInterfaz.getHome().getcStarWars().setText(charSW.getId());
+        ControlInterfaz.getHome().getcSWH().setText(charSW.getSkill());
+        ControlInterfaz.getHome().getcSWL().setText(String.valueOf(charSW.getLife()));
+        ControlInterfaz.getHome().getcSWS().setText(String.valueOf(charSW.getStrength()));
+        ControlInterfaz.getHome().getcSWA().setText(String.valueOf(charSW.getAgility()));
+        ControlInterfaz.getHome().getcSWT().setText(charSW.getQuality());
+        
+        ControlInterfaz.getHome().getcStarTrek().setText(charST.getId());
+        ControlInterfaz.getHome().getcSTH().setText(charST.getSkill());
+        ControlInterfaz.getHome().getcSTL().setText(String.valueOf(charST.getLife()));
+        ControlInterfaz.getHome().getcSTS().setText(String.valueOf(charST.getStrength()));
+        ControlInterfaz.getHome().getcSTA().setText(String.valueOf(charST.getAgility()));
+        ControlInterfaz.getHome().getcSTT().setText(charST.getQuality());
+        
+        
+    
+    
     }
 
     
