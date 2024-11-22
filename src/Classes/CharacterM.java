@@ -16,6 +16,7 @@ public class CharacterM {
     private int life;
     private int strength;
     private int agility;
+    private String urlIMG;
     
     private String status;
      private int counter = 0;
@@ -23,7 +24,7 @@ public class CharacterM {
      private int priority;
      private String quality;
     
-    public CharacterM(String id, int priority, String quality,  String skill, int life, int strength, int agility, String movie){
+    public CharacterM(String id, int priority, String quality,  String skill, int life, int strength, int agility, String movie, String urlIMG){
         this.id = id;
         this.priority = priority;
         this.quality = quality;
@@ -32,6 +33,7 @@ public class CharacterM {
         this.strength = strength;
         this.agility = agility;
         this.movie = movie;
+        this.urlIMG = urlIMG;
     }
     
     
@@ -47,8 +49,19 @@ public class CharacterM {
     
     
     
+    
+    
+    
     public void addCount(){
         this.setCounter(this.getCounter() + 1);
+    }
+
+    public String getUrlIMG() {
+        return urlIMG;
+    }
+
+    public void setUrlIMG(String urlIMG) {
+        this.urlIMG = urlIMG;
     }
     
     

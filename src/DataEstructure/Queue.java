@@ -57,6 +57,33 @@ public class Queue {
         return c; 
     }
     
+    public Queue cloneQueue() {
+        Queue newQueue = new Queue();
+
+        Node node = this.getFront();
+        for (int i = 0; i < this.getSize(); i++) {
+            CharacterM character = node.getC();
+
+            CharacterM newCharacter = new CharacterM(
+                    character.getId(),
+                    character.getPriority(),
+                    character.getQuality(),
+                    character.getSkill(),
+                    character.getLife(),
+                    character.getStrength(),
+                    character.getAgility(),
+                    character.getMovie(),
+                    character.getUrlIMG());
+
+            newQueue.enqueue(newCharacter);
+            node = node.getpNextN();
+        }
+        return newQueue;
+    }
+    
+    
+    
+    
     
     
     
