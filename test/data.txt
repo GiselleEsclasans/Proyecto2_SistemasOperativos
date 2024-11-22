@@ -1,43 +1,43 @@
 <STAR WARS>
-Luke Skywalker,2,Promedio,Fuerza,137,104,96,STAR WARS
-Darth Vader,2,Promedio,Piloto,170,195,91,STAR WARS
-Yoda,3,Deficiente,Logica,97,119,163,STAR WARS
-Princess Leia,2,Promedio,Medicina,200,102,85,STAR WARS
-Han Solo,1,Excepcional,Medicina,144,87,187,STAR WARS
-Obi-Wan Kenobi,1,Excepcional,Liderazgo,182,189,161,STAR WARS
-Anakin Skywalker,2,Promedio,Logica,143,152,111,STAR WARS
-Mace Windu,2,Promedio,Fuerza,80,83,138,STAR WARS
-Qui-Gon Jinn,2,Promedio,Aguante,169,198,93,STAR WARS
-Padmé Amidala,2,Promedio,Diplomacia,198,106,106,STAR WARS
-C-3PO,3,Deficiente,Analisis,148,106,83,STAR WARS
-R2-D2,1,Excepcional,Liderazgo,192,193,155,STAR WARS
-Chewbacca,2,Promedio,Piloto,145,105,161,STAR WARS
-Lando Calrissian,3,Deficiente,Fuerza,97,83,114,STAR WARS
-Boba Fett,3,Deficiente,Aguante,167,82,102,STAR WARS
-Jabba the Hutt,2,Promedio,Aguante,106,145,143,STAR WARS
-Emperor Palpatine,3,Deficiente,Aguante,115,111,86,STAR WARS
-Darth Maul,1,Excepcional,Logica,162,157,180,STAR WARS
-Grand Moff Tarkin,3,Deficiente,Fuerza,81,80,94,STAR WARS
-Mon Mothma,3,Deficiente,Fuerza,91,110,109,STAR WARS
+Luke Skywalker,2,Promedio,Fuerza,137,104,96,STAR WARS,/SWImg/LukeSkywalker.jpg
+Darth Vader,2,Promedio,Piloto,170,195,91,STAR WARS,/SWImg/DarthVader.jpg
+Yoda,3,Deficiente,Logica,97,119,163,STAR WARS,/SWImg/yoda.png
+Princess Leia,2,Promedio,Medicina,200,102,85,STAR WARS,/SWImg/PrincessLeia.jpg
+Han Solo,1,Excepcional,Medicina,144,87,187,STAR WARS,/SWImg/HanSolo.jpeg
+Obi-Wan Kenobi,1,Excepcional,Liderazgo,182,189,161,STAR WARS,/SWImg/Obi-WanKenobi.png
+Anakin Skywalker,2,Promedio,Logica,143,152,111,STAR WARS,/SWImg/AnakinSkywalker.jpg
+Mace Windu,2,Promedio,Fuerza,80,83,138,STAR WARS,/SWImg/MaceWindu.jpeg
+Qui-Gon Jinn,2,Promedio,Aguante,169,198,93,STAR WARS,/SWImg/QuiGonJinn.png
+Padmé Amidala,2,Promedio,Diplomacia,198,106,106,STAR WARS,/SWImg/PadmeAmidala.jpeg
+C-3PO,3,Deficiente,Analisis,148,106,83,STAR WARS,/SWImg/C-3po.jpeg
+R2-D2,1,Excepcional,Liderazgo,192,193,155,STAR WARS,/SWImg/r2-d2.jpeg
+Chewbacca,2,Promedio,Piloto,145,105,161,STAR WARS,/SWImg/Chewbacca.jpeg
+Lando Calrissian,3,Deficiente,Fuerza,97,83,114,STAR WARS,/SWImg/Lando.jpeg
+Boba Fett,3,Deficiente,Aguante,167,82,102,STAR WARS,/SWImg/BobaFett.jpg
+Jabba the Hutt,2,Promedio,Aguante,106,145,143,STAR WARS,/SWImg/Jabba.jpeg
+Emperor Palpatine,3,Deficiente,Aguante,115,111,86,STAR WARS,/SWImg/EmperorPalpatine.jpeg
+Darth Maul,1,Excepcional,Logica,162,157,180,STAR WARS,/SWImg/DarthMaul.jpeg
+Grand Moff Tarkin,3,Deficiente,Fuerza,81,80,94,STAR WARS,/SWImg/GrandMoffTarkin.png
+Mon Mothma,3,Deficiente,Fuerza,91,110,109,STAR WARS,/SWImg/MonMothma.jpeg
 
 <STAR TREK>
-James T. Kirk,1,Excepcional,Diplomacia,124,128,126,STAR TREK
-Spock,2,Promedio,Logica,126,84,145,STAR TREK
-Leonard McCoy,1,Excepcional,Fuerza,171,178,117,STAR TREK
-Jean-Luc Picard,1,Excepcional,Diplomacia,177,182,82,STAR TREK
-Data,2,Promedio,Fuerza,93,188,107,STAR TREK
-William Riker,1,Excepcional,Diplomacia,148,118,148,STAR TREK
-Deanna Troi,2,Promedio,Logica,149,83,148,STAR TREK
-Geordi La Forge,1,Excepcional,Fuerza,150,166,154,STAR TREK
-Worf,3,Deficiente,Logica,142,96,88,STAR TREK
-Beverly Crusher,2,Promedio,Piloto,162,125,117,STAR TREK
-Montgomery Scott,1,Excepcional,Medicina,191,176,103,STAR TREK
-Hikaru Sulu,2,Promedio,Diplomacia,150,82,87,STAR TREK
-Nyota Uhura,3,Deficiente,Analisis,142,89,96,STAR TREK
-Pavel Chekov,1,Excepcional,Liderazgo,196,126,188,STAR TREK
-Leonard Nimoy,2,Promedio,Logica,183,109,125,STAR TREK
-Patrick Stewart,1,Excepcional,Fuerza,147,118,187,STAR TREK
-Jonathan Frakes,1,Excepcional,Diplomacia,187,141,106,STAR TREK
-Marina Sirtis,1,Excepcional,Fuerza,142,178,112,STAR TREK
-Brent Spiner,1,Excepcional,Medicina,121,158,99,STAR TREK
-Gates McFadden,3,Deficiente,Logica,158,107,89,STAR TREK
+James T. Kirk,1,Excepcional,Diplomacia,124,128,126,STAR TREK,/STImg/James.jpg
+Spock,2,Promedio,Logica,126,84,145,STAR TREK,/STImg/Spock.jpg
+Leonard McCoy,1,Excepcional,Fuerza,171,178,117,STAR TREK,/STImg/Leonard.jpg
+Jean-Luc Picard,1,Excepcional,Diplomacia,177,182,82,STAR TREK,/STImg/Jean.jpg
+Data,2,Promedio,Fuerza,93,188,107,STAR TREK,/STImg/Data.jpg
+William Riker,1,Excepcional,Diplomacia,148,118,148,STAR TREK,/STImg/William.jpg
+Deanna Troi,2,Promedio,Logica,149,83,148,STAR TREK,/STImg/Deanna.jpg
+Geordi La Forge,1,Excepcional,Fuerza,150,166,154,STAR TREK,/STImg/Geordi.jpg
+Worf,3,Deficiente,Logica,142,96,88,STAR TREK,/STImg/Worf.jpg
+Beverly Crusher,2,Promedio,Piloto,162,125,117,STAR TREK,/STImg/Beverley.jpg
+Montgomery Scott,1,Excepcional,Medicina,191,176,103,STAR TREK,/STImg/Montgomery.jpg
+Hikaru Sulu,2,Promedio,Diplomacia,150,82,87,STAR TREK,/STImg/Hikaru.jpg
+Nyota Uhura,3,Deficiente,Analisis,142,89,96,STAR TREK,/STImg/Nyota.jpg
+Pavel Chekov,1,Excepcional,Liderazgo,196,126,188,STAR TREK,/STImg/Pavel.jpg
+Kira Nerys,2,Promedio,Logica,183,109,125,STAR TREK,/STImg/Kira.jpg
+Tuvok,1,Excepcional,Fuerza,147,118,187,STAR TREK,/STImg/Tuvok.jpg
+Amanda Grayson,1,Excepcional,Diplomacia,187,141,106,STAR TREK,/STImg/Amanda.jpg
+Saavick,1,Excepcional,Fuerza,142,178,112,STAR TREK,/STImg/Saavik.jpg
+Krall,1,Excepcional,Medicina,121,158,99,STAR TREK,/STImg/Krall.jpg
+Sylvia Tilly,3,Deficiente,Logica,158,107,89,STAR TREK,/STImg/Silvia.jpeg

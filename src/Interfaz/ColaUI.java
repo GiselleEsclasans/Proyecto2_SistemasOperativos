@@ -8,8 +8,12 @@ import DataEstructure.Queue;
 //import Helpers.ImageUtils;
 import Classes.CharacterM;
 import java.awt.FlowLayout;
+import java.awt.Image;
+import java.net.URL;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+
 import javax.swing.JPanel;
 import javax.swing.ScrollPaneConstants;
 
@@ -33,7 +37,7 @@ public class ColaUI extends javax.swing.JPanel {
     public ColaUI(String title) {
         initComponents();
         myInitComponents();
-        //this.titleQueueUI.setText(title);
+        
     }
 
     private void myInitComponents() {
@@ -47,21 +51,38 @@ public class ColaUI extends javax.swing.JPanel {
     }
 
     public void addCard(String urlImage) {
-        //ImageIcon imgIcon = imageUtils.loadScaledImage(urlImage, 60, 80);
-        //JLabel etiqueta = new JLabel(imgIcon);
-        //getQueuePanel().add(etiqueta);
+        ImageIcon image = loadScaledImage(urlImage, 60, 60);
+        JLabel etiqueta = new JLabel(image);
+        getQueuePanel().add(etiqueta);
+        
+     
     }
+    
+    public ImageIcon loadScaledImage(String path, int width, int height) {
+        URL imgUrl = getClass().getResource(path);
+        if (imgUrl != null) {
+            ImageIcon originalIcon = new ImageIcon(imgUrl);
+            Image scaledImage = originalIcon.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
+            return new ImageIcon(scaledImage);
+        } else {
+            System.err.println("No se pudo encontrar el recurso: " + path);
+            return null;
+        }
+    }
+    
+    
 
     public void updateQueueUI(Queue queue) {
         getQueuePanel().removeAll();
-        //Queue auxQueue = queue.cloneQueue();
+        Queue auxQueue = queue.cloneQueue();
 
-        //while (!auxQueue.isEmpty()) {
-            //CharacterM character = auxQueue.dequeue();
-          //  this.addCard(character.getUrlSource());
-        //}
-        //queuePanel.revalidate();
-        //queuePanel.repaint();
+        while (!auxQueue.isEmpty()) {
+            CharacterM character = auxQueue.dequeue();
+            this.addCard(character.getUrlIMG());
+            
+        }
+        queuePanel.revalidate();
+        queuePanel.repaint();
     }
 
     /**
@@ -107,11 +128,5 @@ public class ColaUI extends javax.swing.JPanel {
         return queuePanel;
     }
 
-    /**
-     * @return the titleQueueUI
-     */
-    /*public javax.swing.JLabel getTitleQueueUI() {
-        //return titleQueueUI;
-    }*/
-
+ 
 }

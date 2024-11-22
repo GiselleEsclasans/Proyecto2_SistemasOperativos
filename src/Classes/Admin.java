@@ -10,10 +10,12 @@ package Classes;
  */
 import java.util.concurrent.Semaphore;
 import DataEstructure.LinkedList;
+
 import DataEstructure.Queue;
 import Interfaz.ControlInterfaz;
 import java.util.logging.Logger;
 import java.util.logging.Level;
+
 
 public class Admin extends Thread {
     private final Semaphore mutex;
@@ -30,6 +32,10 @@ public class Admin extends Thread {
     }
     
     public void startSimulation() {
+        
+        
+        ControlInterfaz.getHome().updateUIQueueSW(getStarWars().getFirstQ(), getStarWars().getSecondQ(), getStarWars().getThirdQ(), getStarWars().getBakingQ());
+        ControlInterfaz.getHome().updateUIQueueST(getStarTrek().getFirstQ(), getStarTrek().getSecondQ(), getStarTrek().getThirdQ(), getStarTrek().getBakingQ());
         
         
         ControlInterfaz.getHome().setVisible(true);
@@ -54,9 +60,11 @@ public class Admin extends Thread {
        
         while (true) {
             try {
-                
-                this.starTrek.printQueues();
-                this.starWars.printQueues();
+                int battleDuration = ControlInterfaz.getHome().getBattleDuration().getValue();
+                ia.setTime(battleDuration);
+
+                //this.starTrek.printQueues();
+                //this.starWars.printQueues();
                 
                 updatebakingQ(this.starWars);
                 updatebakingQ(this.starTrek);
@@ -75,6 +83,7 @@ public class Admin extends Thread {
                 this.ia.setStarTrekC(sTCharacter);
                 
                 //Atualizar las colas en la interfaz
+                updateUIqueue();
                 
                 mutex.release();
                 Thread.sleep(100);
@@ -88,6 +97,7 @@ public class Admin extends Thread {
                 cycle++; 
                 
                 //Atualizar las colas en la interfaz
+                updateUIqueue();
                 
                 
                
@@ -182,6 +192,7 @@ public class Admin extends Thread {
     private CharacterM chooseCharacter(Movie movie) {
         if (movie.getFirstQ().isEmpty()) {
             movie.updateQueue1();
+            this.updateUIqueue();
         }
         
    
@@ -198,6 +209,19 @@ public class Admin extends Thread {
             this.getStarWars().createCharacter();
             this.getStarTrek().createCharacter();
         }
+    }
+    
+    public void updateUIqueue() {
+        ControlInterfaz.updateUIQueue("STAR WARS",
+                this.getStarWars().getFirstQ(),
+                this.getStarWars().getSecondQ(),
+                this.getStarWars().getThirdQ(),
+                this.getStarWars().getBakingQ());
+        ControlInterfaz.updateUIQueue("STARTREK",
+                this.getStarTrek().getFirstQ(),
+                this.getStarTrek().getSecondQ(),
+                this.getStarTrek().getThirdQ(),
+                this.getStarTrek().getBakingQ());
     }
 
 

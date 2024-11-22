@@ -76,18 +76,18 @@ public class Movie {
 
     public void updateQueue1() {
      
-        if (!secondQ.isEmpty()) {
+        if (!this.secondQ.isEmpty()) {
             
-            CharacterM character = getSecondQ().dequeue();
+            CharacterM character = this.secondQ.dequeue();
+            character.setCounter(0);
      
-     
-            getFirstQ().enqueue(character);
+            this.firstQ.enqueue(character);
         } else if (!thirdQ.isEmpty()) {
 
-            CharacterM character = getThirdQ().dequeue();
-        
+            CharacterM character = this.thirdQ.dequeue();
+            character.setCounter(0);
        
-            getFirstQ().enqueue(character);
+            this.firstQ.enqueue(character);
         } else {
             //System.out.println("No hay personajes en secondQ o thirdQ para mover a firstQ.");
         }
@@ -134,7 +134,9 @@ public class Movie {
        
         if(this.getMovie() == "STAR WARS"){
             String[] starWarsNames = {"Luke Skywalker", "Darth Vader", "Yoda", "Princess Leia", "Han Solo", "Obi-Wan Kenobi", "Anakin Skywalker", "Mace Windu", "Qui-Gon Jinn", "Padmé Amidala", "C-3PO", "R2-D2", "Chewbacca", "Lando Calrissian", "Boba Fett", "Jabba the Hutt", "Emperor Palpatine", "Darth Maul", "Grand Moff Tarkin", "Mon Mothma"};
+            String[] starWarsIMG = {"LukeSkywalker.jpg", "DarthVader.jpg", "yoda.png", "PrincessLeia.jpg", "HanSolo.jpeg", "Obi-WanKenobi.png", "AnakinSkywalker.jpg", "MaceWindu.jpeg", "QuiGonJinn.png", "PadmeAmidala.jpeg", "C-3po.jpeg", "r2-d2.jpeg", "Chewbacca.jpeg", "Lando.jpeg", "BobaFett.jpg", "Jabba.jpeg", "EmperorPalpatine.jpeg", "DarthMaul.jpeg", "GrandMoffTarkin.png", "MonMothma.jpeg"};
             String name = starWarsNames[this.count % starWarsNames.length];
+            String img = starWarsIMG[this.count % starWarsIMG.length];
             String skill = getSkill();
             int life = getLife();
             int strength = getStrength();
@@ -145,7 +147,7 @@ public class Movie {
             String type = getType(priority);
             String movie = "STAR WARS"; 
             
-            CharacterM character = new CharacterM(name, priority, type, skill, life, strength, agility, movie);
+            CharacterM character = new CharacterM(name, priority, type, skill, life, strength, agility, movie,"/SWImg/" + img);
             EnqueueC(character);
             //System.out.println("Se añadió a STAR WARS" + priority );
             
@@ -153,8 +155,10 @@ public class Movie {
          
         // Personajes de Star Trek
         if(this.getMovie() == "STAR TREK"){
-        String[] starTrekNames = {"James T. Kirk", "Spock", "Leonard McCoy", "Jean-Luc Picard", "Data", "William Riker", "Deanna Troi", "Geordi La Forge", "Worf", "Beverly Crusher", "Montgomery Scott", "Hikaru Sulu", "Nyota Uhura", "Pavel Chekov", "Leonard Nimoy", "Patrick Stewart", "Jonathan Frakes", "Marina Sirtis", "Brent Spiner", "Gates McFadden"};
-        
+            String[] starTrekNames = {"James T. Kirk", "Spock", "Leonard McCoy", "Jean-Luc Picard", "Data", "William Riker", "Deanna Troi", "Geordi La Forge", "Worf", "Beverly Crusher", "Montgomery Scott", "Hikaru Sulu", "Nyota Uhura", "Pavel Chekov", "Kira Nerys", "Tuvok", "Amanda Grayson", "Saavick", "Krall", "Sylvia Tilly"};
+            String[] starTrekIMG = {"James.jpg", "Spock.jpg", "Leonard.jpg", "Jean.jpg", "Data.jpg", "William.jpg", "Deanna.jpg", "Geordi.jpg", "Worf.jpg", "Beverley.jpg", "Montgomery.jpg", "Hikaru.jpg", "Nyota.jpg", "Pavel.jpg", "Kira.jpg", "Tuvok.jpg", "Amanda.jpg", "Saavik.jpg", "Krall.jpg", "Silvia.jpeg"};
+            String img = starTrekIMG[this.count % starTrekIMG.length];
+            
             String name = starTrekNames[this.count % starTrekNames.length];
             
             String skill = getSkill();
@@ -167,7 +171,7 @@ public class Movie {
             
             String movie = "STAR TREK";
             
-            CharacterM character = new CharacterM(name, priority, type, skill, life, strength, agility, movie);
+            CharacterM character = new CharacterM(name, priority, type, skill, life, strength, agility, movie, "/STImg/" + img);
             EnqueueC(character);
             //System.out.println("Se añadió a STAR TREK" + priority);
         }

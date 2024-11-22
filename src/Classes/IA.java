@@ -5,10 +5,13 @@
 package Classes;
 
 import Interfaz.ControlInterfaz;
+import java.awt.Image;
+import java.net.URL;
 import java.util.Random;
 import java.util.concurrent.Semaphore;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import proyecto2_sistemasoperativos.App;
 
 public class IA extends Thread {
@@ -17,7 +20,7 @@ public class IA extends Thread {
     private CharacterM starTrekC;
     private final Semaphore mutex;
 
-    private long time = 10; 
+    private long time; 
     private int winnersStarWars = 0;
     private int winnersStarTrek = 0;
     private int round;
@@ -26,6 +29,7 @@ public class IA extends Thread {
         
         this.admin = App.getApp().getAdmin();
         this.mutex = App.getApp().getMutex();
+        this.time = App.getApp().getBattleDuration();
         this.round = 0;
     }
     
@@ -51,7 +55,7 @@ public class IA extends Thread {
                 ControlInterfaz.getHome().getiaState().setText("Se finalizó la desición");
                 
             
-                
+                ControlInterfaz.getHome().getiaState().setText("Esperando jugadores");
                 
                 
                 Thread.sleep((long) ((getTime() * 1000 * 0.3) * 0.4));
@@ -67,7 +71,7 @@ public class IA extends Thread {
 
     private void processBattle(CharacterM starWarsC, CharacterM starTrekC) throws InterruptedException {
       
-
+        
         Random random = new Random();
         int outcome = random.nextInt(100); 
 
@@ -87,8 +91,8 @@ public class IA extends Thread {
 
     private void declareWinner(CharacterM cSW, CharacterM cST) {
         
-        double lifeSW = starWarsC.getLife();
-        double lifeST = starTrekC.getLife();
+        int lifeSW = starWarsC.getLife();
+        int lifeST = starTrekC.getLife();
         
         while (starWarsC.getLife() > 0 && starTrekC.getLife() > 0) {
             int damageToST = (starWarsC.getStrength() + starWarsC.getAgility())/10;
@@ -105,6 +109,7 @@ public class IA extends Thread {
             // Verificar si Star Trek ha sido derrotado
             if (lifeST <= 0) {
                 admin.addWinner(cSW);
+                starWarsC.setLife(lifeSW);
                 winnersStarWars++;
         
                 ControlInterfaz.getHome().getwinStarWars().setText(String.valueOf(winnersStarWars));
@@ -127,6 +132,7 @@ public class IA extends Thread {
             // Verificar si Star Wars ha sido derrotado
             if (lifeSW <= 0) {
                 admin.addWinner(cST);
+                starTrekC.setLife(lifeST);
                 winnersStarTrek++;
         
                 ControlInterfaz.getHome().getwinStarTrek().setText(String.valueOf(winnersStarTrek));
@@ -165,7 +171,10 @@ public class IA extends Thread {
     
     
     private void updateCharactersUI(CharacterM charSW, CharacterM charST){
-    
+       
+
+        
+        ControlInterfaz.getHome().setIMGLabelSW(charSW.getUrlIMG());
         ControlInterfaz.getHome().getcStarWars().setText(charSW.getId());
         ControlInterfaz.getHome().getcSWH().setText(charSW.getSkill());
         ControlInterfaz.getHome().getcSWL().setText(String.valueOf(charSW.getLife()));
@@ -173,6 +182,7 @@ public class IA extends Thread {
         ControlInterfaz.getHome().getcSWA().setText(String.valueOf(charSW.getAgility()));
         ControlInterfaz.getHome().getcSWT().setText(charSW.getQuality());
         
+        ControlInterfaz.getHome().setIMGLabelST(charST.getUrlIMG());
         ControlInterfaz.getHome().getcStarTrek().setText(charST.getId());
         ControlInterfaz.getHome().getcSTH().setText(charST.getSkill());
         ControlInterfaz.getHome().getcSTL().setText(String.valueOf(charST.getLife()));
@@ -183,6 +193,18 @@ public class IA extends Thread {
         
     
     
+    }
+    
+    public ImageIcon loadScaledImage(String path, int width, int height) {
+        URL imgUrl = getClass().getResource(path);
+        if (imgUrl != null) {
+            ImageIcon originalIcon = new ImageIcon(imgUrl);
+            Image scaledImage = originalIcon.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
+            return new ImageIcon(scaledImage);
+        } else {
+            System.err.println("No se pudo encontrar el recurso: " + path);
+            return null;
+        }
     }
 
     

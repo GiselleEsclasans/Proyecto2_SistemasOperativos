@@ -43,7 +43,7 @@ public class FileMovies {
                     currentSeries = "STAR TREK";
                 } else if (!line.isEmpty()) {
                     String[] parts = line.split(",");
-                    if (parts.length == 8) {
+                    if (parts.length == 9) {
                         String id = parts[0];
                         int priority = Integer.parseInt(parts[1]);
                         String quality = parts[2];
@@ -52,8 +52,9 @@ public class FileMovies {
                         int strength = Integer.parseInt(parts[5]);
                         int agility = Integer.parseInt(parts[6]);
                         String movie = parts[7];
+                        String img = parts[8];
 
-                        CharacterM character = new CharacterM(id, priority, quality, skill, life, strength, agility, movie);
+                        CharacterM character = new CharacterM(id, priority, quality, skill, life, strength, agility, movie, img);
 
                         // Insertar en la lista correspondiente
                         if (currentSeries.equals("STAR WARS")) {
