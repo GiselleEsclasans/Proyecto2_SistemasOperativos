@@ -208,6 +208,7 @@ public class Admin extends Thread {
         if (randomNum <= 0.8) {
             this.getStarWars().createCharacter();
             this.getStarTrek().createCharacter();
+     
         }
     }
     

@@ -67,7 +67,6 @@ public class Home extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
@@ -107,7 +106,7 @@ public class Home extends javax.swing.JFrame {
         imgSW = new javax.swing.JPanel();
         cSWIMG = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
-        battleStatus = new javax.swing.JLabel();
+        newC = new javax.swing.JLabel();
         battleS = new javax.swing.JLabel();
         jPanel14 = new javax.swing.JPanel();
         jLabel42 = new javax.swing.JLabel();
@@ -130,6 +129,7 @@ public class Home extends javax.swing.JFrame {
         jPanel15 = new javax.swing.JPanel();
         jLabel49 = new javax.swing.JLabel();
         battleDuration = new javax.swing.JSlider();
+        battleStatus = new javax.swing.JLabel();
         colaSW2 = new Interfaz.ColaUI();
         colaSW3 = new Interfaz.ColaUI();
         colaSW4 = new Interfaz.ColaUI();
@@ -160,7 +160,7 @@ public class Home extends javax.swing.JFrame {
         jLabel9.setText("Prioridad ");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
 
-        jLabel10.setText("Prioridad ");
+        jLabel10.setText("Cola");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, -1, -1));
 
         jLabel7.setText("1");
@@ -178,9 +178,6 @@ public class Home extends javax.swing.JFrame {
         jLabel14.setText("Prioridad ");
         getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, -1, -1));
 
-        jLabel15.setText("Prioridad ");
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
-
         jLabel4.setText("De Refuerzo");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 330, -1, 20));
 
@@ -190,7 +187,7 @@ public class Home extends javax.swing.JFrame {
         jLabel17.setText("Prioridad ");
         getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 140, -1, -1));
 
-        jLabel18.setText("Prioridad ");
+        jLabel18.setText("Cola");
         getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 310, -1, -1));
 
         jLabel20.setText("1");
@@ -337,17 +334,16 @@ public class Home extends javax.swing.JFrame {
         jLabel33.setText("Estado de la IA:");
         jPanel12.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 370, -1, -1));
 
-        battleStatus.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        battleStatus.setForeground(new java.awt.Color(0, 0, 0));
-        battleStatus.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        battleStatus.setText("*resultado*");
-        jPanel12.add(battleStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, 300, 20));
+        newC.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        newC.setForeground(new java.awt.Color(0, 0, 0));
+        newC.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel12.add(newC, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 320, 300, 20));
 
         battleS.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         battleS.setForeground(new java.awt.Color(0, 0, 0));
         battleS.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         battleS.setText(" ");
-        jPanel12.add(battleS, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 260, 670, 20));
+        jPanel12.add(battleS, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 260, 370, 20));
 
         jPanel14.setBackground(new java.awt.Color(255, 255, 255));
         jPanel14.setForeground(new java.awt.Color(255, 255, 255));
@@ -452,6 +448,11 @@ public class Home extends javax.swing.JFrame {
         battleDuration.setPaintTicks(true);
         jPanel12.add(battleDuration, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 50, -1, -1));
 
+        battleStatus.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        battleStatus.setForeground(new java.awt.Color(0, 0, 0));
+        battleStatus.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel12.add(battleStatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, 300, 20));
+
         getContentPane().add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 380, 1100, 420));
         getContentPane().add(colaSW2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 120, -1, -1));
         getContentPane().add(colaSW3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, -1, -1));
@@ -546,7 +547,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -593,6 +593,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JLabel newC;
     private javax.swing.JLabel round;
     private javax.swing.JLabel winStarTrek;
     private javax.swing.JLabel winStarWars;
@@ -614,6 +615,8 @@ public class Home extends javax.swing.JFrame {
         cSTIMG.setIcon(image);
                 
     }
+    
+    
     
     
     
@@ -644,6 +647,12 @@ public class Home extends javax.swing.JFrame {
     public javax.swing.JLabel getbattleStatus() {
         return battleStatus;
     }
+
+    public JLabel getNewC() {
+        return newC;
+    }
+    
+    
     
     public javax.swing.JLabel getiaState() {
         return iaState;
@@ -716,7 +725,17 @@ public class Home extends javax.swing.JFrame {
      public javax.swing.JSlider getBattleDuration() {
         return battleDuration;
     }
+
+    public JLabel getcSTIMG() {
+        return cSTIMG;
+    }
+
+    public JLabel getcSWIMG() {
+        return cSWIMG;
+    }
     
+     
+     
     
     
     
